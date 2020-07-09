@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
+import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,8 @@ import java.lang.reflect.Array;
  */
 public class OrderActivity extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener {
+
+    private CheckBox chocolateSyrup, sprinkles, crushedNuts,cherries,orio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,5 +108,35 @@ public class OrderActivity extends AppCompatActivity implements
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         // Do nothing.
+    }
+
+    public void onShowToastButtonClicked(View view) {
+        String message = "Toppings: ";
+
+        if(chocolateSyrup.isChecked())
+            message += getString(R.string.chocolateSyrup) + " ";
+
+        if(sprinkles.isChecked())
+            message += getString(R.string.sprinkles) + " ";
+
+        if(crushedNuts.isChecked())
+            message += getString(R.string.crushedNuts) + " ";
+
+        if(cherries.isChecked())
+            message += getString(R.string.cherries) + " ";
+
+        if(orio.isChecked())
+            message += getString(R.string.orioCookieCrumbles) + " ";
+
+        displayToast(message);
+
+    }
+    public void   initializeUI()
+    {
+        chocolateSyrup = findViewById(R.id.chocolateSyrup);
+        sprinkles = findViewById(R.id.sprinkles);
+        orio = findViewById(R.id.orioCookie);
+        cherries = findViewById(R.id.cherries);
+        crushedNuts = findViewById(R.id.crushedNuts);
     }
 }

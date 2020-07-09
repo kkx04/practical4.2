@@ -140,6 +140,7 @@
         app:layout_constraintTop_toBottomOf="@+id/note_text" />
 
     <RadioGroup
+        android:id="@+id/radioGroup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -170,18 +171,74 @@
             android:text="@string/pick_up" />
     </RadioGroup>
 
+
+    <LinearLayout
+
+        android:id="@+id/checkBoxGrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
+        tools:ignore="UnknownId">
+
+        <CheckBox
+            android:id="@+id/chocolateSyrup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chocolateSyrup" />
+
+        <CheckBox
+            android:id="@+id/sprinkles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sprinkles" />
+
+        <CheckBox
+            android:id="@+id/crushedNuts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crushedNuts" />
+
+        <CheckBox
+            android:id="@+id/cherries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cherries" />
+
+        <CheckBox
+            android:id="@+id/orioCookie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/orioCookieCrumbles" />
+
+        <Button
+            android:id="@+id/toastMessage"
+            android:layout_width="126dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onShowToastButtonClicked"
+            android:text="@string/show_toast"
+            tools:ignore="OnClick" />
+
+    </LinearLayout>
+
     <Spinner
         android:id="@+id/label_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/phone_text"
         app:layout_constraintTop_toBottomOf="@+id/address_text" />
-
-
 </android.support.constraint.ConstraintLayout>
